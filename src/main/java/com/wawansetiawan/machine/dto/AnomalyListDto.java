@@ -8,6 +8,7 @@ public class AnomalyListDto {
     private Long anomalyReason;
     private Long machineType;
     private Long anomalyLevel;
+    private Boolean seenStatus;
 
     // Getters
     public String getId() {
@@ -48,5 +49,13 @@ public class AnomalyListDto {
 
     public void setAnomalyLevel(Long anomalyLevel) {
         this.anomalyLevel = anomalyLevel;
+    }
+
+    public Boolean getSeenStatus() {
+        return seenStatus;
+    }
+
+    public void setSeenStatus(Boolean seenStatus) {
+        this.seenStatus = seenStatus;
     }
 }

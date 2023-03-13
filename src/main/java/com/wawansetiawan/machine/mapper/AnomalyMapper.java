@@ -19,6 +19,7 @@ public class AnomalyMapper {
             AnomalyListDto dto = new AnomalyListDto();
             dto.setId(String.format("%08d", entity.getId()));
             dto.setTimestamp(entity.getTimestamp());
+            dto.setSeenStatus(entity.getSeenStatus());
 
             if (entity.getAnomalyReasonEntity() != null) {
                 dto.setAnomalyReason(entity.getAnomalyReasonEntity().getId());

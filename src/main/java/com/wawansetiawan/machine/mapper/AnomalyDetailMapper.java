@@ -28,9 +28,11 @@ public class AnomalyDetailMapper {
         anomalyDto.setId(String.format("%08d", anomalyEntity.getId()));
         anomalyDto.setTimestamp(anomalyEntity.getTimestamp());
         anomalyDto.setPath(anomalyEntity.getPath());
+        anomalyDto.setSensorId(anomalyEntity.getSensorId());
 
         if (anomalyEntity.getMachineTypeEntity() != null) {
             anomalyDto.setMachineType(anomalyEntity.getMachineTypeEntity().getName());
+            anomalyDto.setMachineTypeId(anomalyEntity.getMachineTypeEntity().getId());
         }
 
         if (anomalyEntity.getAnomalyReasonEntity() != null) {

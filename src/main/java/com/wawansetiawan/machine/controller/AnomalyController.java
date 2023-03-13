@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.wawansetiawan.machine.service.AnomalyService;
 import com.wawansetiawan.machine.dto.AnomalyListDto;
@@ -54,6 +55,7 @@ public class AnomalyController {
     }
     */
 
+    @CrossOrigin
     @GetMapping
     public ApiResponse findAllAnomaly() {
         try {
@@ -84,6 +86,7 @@ public class AnomalyController {
         }
     }
 
+    @CrossOrigin
     @GetMapping("/{anomalyId}")
     public ApiResponse findAnomalyDetail(@PathVariable("anomalyId") Long anomalyId) {
         try {
