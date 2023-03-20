@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-// import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -95,7 +94,7 @@ public class AnomalyController {
                 return new ApiResponse(ErrorMessage, null, ErrorNotFoundMessage);
             }
             
-            if (anomaly.getComment() != null){
+            if (anomaly.getComment() != null && !anomaly.getComment().isEmpty()){
                 anomalyDB.setComment(ClobProxy.generateProxy(anomaly.getComment()));
             }
 
