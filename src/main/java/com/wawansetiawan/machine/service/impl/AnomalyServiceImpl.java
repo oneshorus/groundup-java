@@ -1,5 +1,6 @@
 package com.wawansetiawan.machine.service.impl;
 
+import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,6 +34,7 @@ public class AnomalyServiceImpl implements AnomalyService {
         this.anomalyRepository = anomalyRepository;
     }
 
+    @Transactional
     @Override
     public List<AnomalyListDto> findAll() {
         return anomalyMapper.toDto(anomalyRepository.findAll(
@@ -42,10 +44,27 @@ public class AnomalyServiceImpl implements AnomalyService {
         ));
     }
 
+    @Transactional
     @Override
     public Optional<AnomalyDto> findById(Long id) {
         AnomalyEntity anomalyEntity = anomalyRepository.findById(id).orElse(null);
 
         return anomalyDetailMapper.toDto(anomalyEntity);
+    }
+
+    @Transactional
+    @Override
+    public AnomalyEntity findEntityById(Long id) {
+        AnomalyEntity anomalyEntity = anomalyRepository.findById(id).orElse(null);
+
+        return anomalyEntity;
+    }
+
+    @Transactional
+    @Override
+    public Optional<AnomalyDto> updateAnomalyEntity(AnomalyEntity anomalyEntity) {
+        AnomalyEntity updatedAnomalyEntity = anomalyRepository.save(anomalyEntity);
+
+        return anomalyDetailMapper.toDto(updatedAnomalyEntity);
     }
 }

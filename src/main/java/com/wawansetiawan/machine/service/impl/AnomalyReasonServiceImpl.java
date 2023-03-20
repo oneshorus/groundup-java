@@ -36,7 +36,7 @@ public class AnomalyReasonServiceImpl implements AnomalyReasonService {
     }
 
     @Override
-    public Optional<AnomalyReasonEntity> findById(Long id) {
-        return anomalyReasonRepository.findById(id);
+    public AnomalyReasonEntity findById(Long id) {
+        return anomalyReasonRepository.findById(id).orElse(null);
     }
 }

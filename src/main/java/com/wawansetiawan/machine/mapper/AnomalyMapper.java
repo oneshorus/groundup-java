@@ -5,7 +5,9 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
 
+// import com.wawansetiawan.machine.dto.AnomalyDto;
 import com.wawansetiawan.machine.dto.AnomalyListDto;
+// import com.wawansetiawan.machine.entity.ActionEntity;
 import com.wawansetiawan.machine.entity.AnomalyEntity;
 
 @Component
@@ -38,10 +40,12 @@ public class AnomalyMapper {
         return dtos;
     }
     
-    // public AnomalyEntity toEntity(AnomalyListDto dto) {
+    // public AnomalyEntity toEntity(AnomalyDto dto) {
+    //     ActionEntity action = new ActionEntity()
     //     AnomalyEntity entity = new AnomalyEntity();
-    //     entity.setId(dto.getId());
-    //     entity.setName(dto.getName());
+    //     entity.setId(Long.parseLong(dto.getId()));
+    //     entity.setSeenStatus(true);
+    //     entity.setActionEntity(action.setId(dto.getAction()));
     //     return entity;
     // }
 }
