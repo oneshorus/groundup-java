@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 
-import org.hibernate.engine.jdbc.ClobProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -95,7 +94,7 @@ public class AnomalyController {
             }
             
             if (anomaly.getComment() != null && !anomaly.getComment().isEmpty()){
-                anomalyDB.setComment(ClobProxy.generateProxy(anomaly.getComment()));
+                anomalyDB.setComment(anomaly.getComment());
             }
 
             AnomalyReasonEntity reasonEntity = anomalyReasonService.findById(anomaly.getAnomalyReason());

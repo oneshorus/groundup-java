@@ -1,6 +1,5 @@
 package com.wawansetiawan.machine.entity;
 
-import java.sql.Clob;
 import java.sql.Timestamp;
 
 import jakarta.persistence.Entity;
@@ -50,7 +49,7 @@ public class AnomalyEntity {
     private ActionEntity actionEntity;
 
     @Lob
-    private Clob comment;
+    private String comment;
 
     private Boolean seenStatus;
 
@@ -100,11 +99,11 @@ public class AnomalyEntity {
         this.actionEntity = actionEntity;
     }
 
-    public Clob getComment() {
+    public String getComment() {
         return comment;
     }
 
-    public void setComment(Clob comment) {
+    public void setComment(String comment) {
         this.comment = comment;
     }
 

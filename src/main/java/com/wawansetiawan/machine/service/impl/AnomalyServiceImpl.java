@@ -19,7 +19,6 @@ import com.wawansetiawan.machine.entity.AnomalyEntity;
 import com.wawansetiawan.machine.repository.AnomalyRepository;
 import com.wawansetiawan.machine.service.AnomalyService;
 import com.wawansetiawan.machine.dto.AnomalyListDto;
-import com.wawansetiawan.machine.controller.AnomalyController;
 import com.wawansetiawan.machine.dto.AnomalyDto;
 import com.wawansetiawan.machine.mapper.AnomalyMapper;
 import com.wawansetiawan.machine.mapper.AnomalyDetailMapper;
