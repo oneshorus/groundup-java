@@ -5,9 +5,10 @@ import java.sql.Timestamp;
 public class AnomalyDto {
     private String id;
     private Timestamp timestamp;
+    private Long machineTypeId;
     private String machineType;
     // private Long anomalyLevel;
-    // private String sensorId;
+    private String sensorId;
     private String path;
     private Long anomalyReason;
     private Long action;
@@ -30,12 +31,28 @@ public class AnomalyDto {
         this.timestamp = timestamp;
     }
 
+    public Long getMachineTypeId() {
+        return machineTypeId;
+    }
+
+    public void setMachineTypeId(Long machineTypeId) {
+        this.machineTypeId = machineTypeId;
+    }
+
     public String getMachineType() {
         return machineType;
     }
 
     public void setMachineType(String machineType) {
         this.machineType = machineType;
+    }
+
+    public String getSensorId() {
+        return sensorId;
+    }
+
+    public void setSensorId(String sensorId) {
+        this.sensorId = sensorId;
     }
 
     public Long getAnomalyReason() {

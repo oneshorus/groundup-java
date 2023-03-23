@@ -1,7 +1,6 @@
 package com.wawansetiawan.machine.service.impl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +35,7 @@ public class AnomalyReasonServiceImpl implements AnomalyReasonService {
     }
 
     @Override
-    public Optional<AnomalyReasonEntity> findById(Long id) {
-        return anomalyReasonRepository.findById(id);
+    public AnomalyReasonEntity findById(Long id) {
+        return anomalyReasonRepository.findById(id).orElse(null);
     }
 }

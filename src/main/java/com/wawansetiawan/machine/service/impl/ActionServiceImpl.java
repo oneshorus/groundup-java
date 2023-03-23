@@ -1,7 +1,6 @@
 package com.wawansetiawan.machine.service.impl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -24,7 +23,7 @@ public class ActionServiceImpl implements ActionService {
     }
 
     @Override
-    public Optional<ActionEntity> findById(Long id) {
-        return actionRepository.findById(id);
+    public ActionEntity findById(Long id) {
+        return actionRepository.findById(id).orElse(null);
     }
 }
